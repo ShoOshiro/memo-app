@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
+import {Provider} from 'react-redux';
+import MemoStore from './store/MemoStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={MemoStore}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
