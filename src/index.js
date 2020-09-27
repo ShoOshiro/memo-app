@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'antd/dist/antd.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
@@ -9,9 +10,9 @@ import MemoStore from './store/MemoStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={MemoStore}>
+    {/* <Provider store={MemoStore}> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
