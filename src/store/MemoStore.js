@@ -1,12 +1,13 @@
 import {createStore} from 'redux';
 
 const initialData = {
-    memoInfo: {
+    memoInfo: [{
         title: null,
         category: null,
+        detail: null,
         createdDate: null,
         updateDate: null
-    }
+    }]
 }
 
 // define reducer
