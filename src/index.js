@@ -10,9 +10,9 @@ import MemoStore from './store/MemoStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={MemoStore}>
+    {/* <Provider store={MemoStore}> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

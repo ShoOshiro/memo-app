@@ -44,7 +44,6 @@ export class MemoDetail extends Component {
     render(){
         const { TextArea } = Input;
         const {title, category, detail} = this.props.mode == 'selected' && this.props.displayMemo;
-
         return(
             <div className='memo-detail'>
                 <Row>

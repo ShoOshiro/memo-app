@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
+
 import MemoDisplay from './component/content/MemoDisplay';
 import MemoDetail from './component/content/MemoDetail';
 import MemoAction from './component/header/MemoAction';
