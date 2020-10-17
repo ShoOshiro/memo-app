@@ -1,5 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Button} from 'antd';
+import {displayNewInput} from '../../store/MemoStore';
 
 export class MemoAction extends React.Component{
 
@@ -7,7 +9,10 @@ export class MemoAction extends React.Component{
     onDeleteClick = () => {console.log('delete clicked')};
 
     // TODO: display new area of memo
-    onAddClick = () => {console.log('add selected')};
+    onAddClick = () => {
+        const action = displayNewInput()
+        this.props.dispatch(action);
+    };
 
     render(){
         return (
@@ -19,4 +24,4 @@ export class MemoAction extends React.Component{
     }
 }
 
-export default MemoAction;
+export default connect((state) => state)(MemoAction);

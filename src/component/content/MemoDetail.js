@@ -43,19 +43,21 @@ export class MemoDetail extends Component {
 
     render(){
         const { TextArea } = Input;
+        const {title, category, detail} = this.props.mode == 'selected' && this.props.displayMemo;
+
         return(
             <div className='memo-detail'>
                 <Row>
                     <Col span={15} offset={1}>
-                        <Input onChange={this.doChange.bind(this, 'title')}></Input>
+                        <Input onChange={this.doChange.bind(this, 'title')} value={title} />
                     </Col>
                     <Col span={6} offset={1}>
-                        <Input onChange={this.doChange.bind(this, 'category')}></Input>
+                        <Input onChange={this.doChange.bind(this, 'category')} value={category} />
                     </Col>
                 </Row>
                 <Row>
                     <Col span={22} offset={1}>
-                        <TextArea rows={4} onChange={this.doChange.bind(this, 'detail')}></TextArea>
+                        <TextArea rows={4} onChange={this.doChange.bind(this, 'detail')} value={detail}/>
                     </Col>
                 </Row>
                 <Row>
