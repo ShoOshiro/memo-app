@@ -1,6 +1,9 @@
 import React from 'react';
 import { Layout } from 'antd';
+
+import MemoDisplay from './component/content/MemoDisplay';
 import MemoDetail from './component/content/MemoDetail';
+import MemoAction from './component/header/MemoAction';
 
 function App() {
   
@@ -14,9 +17,11 @@ function App() {
             Sider
           </Sider>
           <Layout>
-            <Header>Header</Header>
+            <Header>
+              <MemoAction/>
+            </Header>
             <Content>
-              <MemoDetail/>
+              <MemoDisplay/>
             </Content>
             <Footer>Footer</Footer>
           </Layout>

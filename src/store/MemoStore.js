@@ -1,12 +1,15 @@
 import {createStore} from 'redux';
 
 const initialData = {
-    memoInfo: {
+    mode: 'default',
+    memoInfo: [{
         title: null,
         category: null,
+        detail: null,
         createdDate: null,
         updateDate: null
-    }
+    }],
+    selectedMemo:null
 }
 
 // define reducer
@@ -14,6 +17,8 @@ export function memoReducer(state = initialData, action){
     switch(action.type){
         case 'ADD':
             return addReduce(state, action);
+        case 'NEWINPUT':
+            return displayNewInputReduce(state, action);
         default:
             return state
     }
@@ -28,7 +33,14 @@ function addReduce(state, action){
     };
     let newMemoInfo = state.memoInfo.slice();
     newMemoInfo.unshift(memoInfo);
-    return newMemoInfo;
+    return {
+        mode: 'default',
+        memoInfo: newMemoInfo
+    }
+}
+
+function displayNewInputReduce(state, action){
+    return{mode: 'default'};
 }
 
 // define action creater
@@ -37,6 +49,10 @@ export function addMemo(memoInfo){
         type: 'ADD',
         memoInfo: memoInfo
     };
+}
+
+export function displayNewInput(){
+    return {type: 'NEWINPUT'};
 }
 
 // create store
