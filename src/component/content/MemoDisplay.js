@@ -10,8 +10,11 @@ export class MemoDisplay extends React.Component {
             case 'default':
                 displayMemo = <MemoDetail/>
                 break;
-            case 'selected':
+            case 'select':
                 displayMemo = <MemoDetail displayMemo={this.props.selectedMemo}/>
+                break;
+            case 'search':
+                displayMemo = <MemoDetail/>
                 break;
         }
         return(

@@ -2,8 +2,9 @@ import React from 'react';
 import { Layout } from 'antd';
 
 import MemoDisplay from './component/content/MemoDisplay';
-import MemoDetail from './component/content/MemoDetail';
 import MemoAction from './component/header/MemoAction';
+import MemoList from './component/sideMenu/MemoList';
+import SearchArea from './component/sideMenu/SearchArea';
 
 function App() {
   
@@ -13,9 +14,12 @@ function App() {
     <div className="App">
       <body>
         <Layout>
-          <Sider>
-            Sider
-          </Sider>
+          <div className="sider">
+            <Sider trigger={null} theme='light'>
+              <SearchArea/>
+              <MemoList/>
+            </Sider>
+          </div>
           <Layout>
             <Header>
               <MemoAction/>

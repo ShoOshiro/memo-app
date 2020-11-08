@@ -1,24 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Button} from 'antd';
-import {displayNewInput} from '../../store/MemoStore';
+import {deleteMemo} from '../../store/MemoStore';
 
 export class MemoAction extends React.Component{
 
     // TODO: delete memo selected
-    onDeleteClick = () => {console.log('delete clicked')};
-
-    // TODO: display new area of memo
-    onAddClick = () => {
-        const action = displayNewInput()
+    onDeleteClick = () => {
+        console.log(this.props.selectedMemo);
+        const action = deleteMemo(this.props.selectedMemo.index);
         this.props.dispatch(action);
     };
 
     render(){
         return (
             <div>
-                <Button onClick={this.onAddClick}>新規追加</Button>
-                <Button onClick={this.onDeleteClick}>削除</Button>
+                {/* <Button onClick={this.onDeleteClick}>delete memo</Button> */}
             </div>
         );
     }
